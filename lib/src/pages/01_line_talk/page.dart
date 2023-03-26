@@ -8,9 +8,20 @@ class LineTalkPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("LINE"),
-      ),
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: AppBar(
+              leading: Row(
+            children: [
+              IconButton(
+                onPressed: () => {},
+                icon: const Icon(
+                  Icons.arrow_back_ios_new,
+                ),
+              ),
+              const Text("12"),
+            ],
+          ))),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
