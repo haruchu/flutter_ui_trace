@@ -1,3 +1,4 @@
+import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 
 class LineTalkPage extends StatelessWidget {
@@ -83,21 +84,44 @@ class LineTalkPage extends StatelessWidget {
             ],
           )),
       body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('images/line_talk_background.png'),
-          fit: BoxFit.cover,
-        )),
-        child: const Center(
-          child: Text(
-            'line',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-            ),
-          ),
-        ),
-      ),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+            image: AssetImage('images/line_talk_background.png'),
+            fit: BoxFit.cover,
+          )),
+          child: ListView(
+            padding: const EdgeInsets.only(top: 20, left: 10),
+            children: <Widget>[
+              Bubble(
+                alignment: Alignment.topRight,
+                padding: const BubbleEdges.all(10),
+                nip: BubbleNip.rightTop,
+                radius: const Radius.circular(16),
+                color: const Color.fromRGBO(225, 255, 199, 1.0),
+                child: const Text('Hello, World!'),
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    margin: const EdgeInsets.only(right: 8),
+                    decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
+                  Bubble(
+                    alignment: Alignment.topLeft,
+                    padding: const BubbleEdges.all(10),
+                    radius: const Radius.circular(16),
+                    margin: const BubbleEdges.only(top: 10),
+                    nip: BubbleNip.leftTop,
+                    child: const Text('Hi, developer!'),
+                  ),
+                ],
+              ),
+            ],
+          )),
     );
   }
 }
