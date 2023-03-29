@@ -46,49 +46,49 @@ class LineTalkPage extends StatelessWidget {
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: AppBar(
-            elevation: 0,
-            backgroundColor: const Color.fromARGB(255, 99, 166, 217),
-            leadingWidth: 200,
-            leading: Row(
-              children: [
-                IconButton(
-                  color: Colors.black,
-                  onPressed: () => {},
-                  icon: const Icon(
-                    Icons.arrow_back_ios_new,
+              elevation: 0,
+              backgroundColor: const Color.fromARGB(255, 99, 166, 217),
+              leadingWidth: 200,
+              leading: Row(
+                children: [
+                  IconButton(
+                    color: Colors.black,
+                    onPressed: () => {},
+                    icon: const Icon(
+                      Icons.arrow_back_ios_new,
+                    ),
                   ),
-                ),
-                // ignore: prefer_const_constructors
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(
-                        right: 10,
-                      ),
-                      child: Text(
-                        allTalkCount >= 99
-                            ? "$allTalkCount+"
-                            : allTalkCount.toString(),
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
+                  // ignore: prefer_const_constructors
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(
+                          right: 10,
+                        ),
+                        child: Text(
+                          allTalkCount >= 99
+                              ? "$allTalkCount+"
+                              : allTalkCount.toString(),
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
-                    const Text(
-                      talkName,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-            actions: [
-              Row(
+                      const Text(
+                        talkName,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
                     color: Colors.black,
@@ -112,9 +112,7 @@ class LineTalkPage extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
-            ],
-          )),
+              ))),
       body: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
