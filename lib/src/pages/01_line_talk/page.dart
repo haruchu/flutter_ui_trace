@@ -10,6 +10,38 @@ class LineTalkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final talkList = [
+      for (int i = 1; i < 51; i++)
+        i % 2 == 0
+            ? Bubble(
+                alignment: Alignment.topRight,
+                padding: const BubbleEdges.all(10),
+                nip: BubbleNip.rightTop,
+                radius: const Radius.circular(16),
+                color: const Color.fromRGBO(225, 255, 199, 1.0),
+                child: const Text('こんにちは'),
+              )
+            : Row(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    margin: const EdgeInsets.only(right: 8),
+                    decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
+                  Bubble(
+                    alignment: Alignment.topLeft,
+                    padding: const BubbleEdges.all(10),
+                    radius: const Radius.circular(16),
+                    margin: const BubbleEdges.only(top: 10),
+                    nip: BubbleNip.leftTop,
+                    child: const Text('こんばんは'),
+                  ),
+                ],
+              ),
+    ];
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
@@ -91,36 +123,7 @@ class LineTalkPage extends StatelessWidget {
           )),
           child: ListView(
             padding: const EdgeInsets.only(top: 20, left: 10),
-            children: <Widget>[
-              Bubble(
-                alignment: Alignment.topRight,
-                padding: const BubbleEdges.all(10),
-                nip: BubbleNip.rightTop,
-                radius: const Radius.circular(16),
-                color: const Color.fromRGBO(225, 255, 199, 1.0),
-                child: const Text('Hello, World!'),
-              ),
-              Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    margin: const EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(25)),
-                  ),
-                  Bubble(
-                    alignment: Alignment.topLeft,
-                    padding: const BubbleEdges.all(10),
-                    radius: const Radius.circular(16),
-                    margin: const BubbleEdges.only(top: 10),
-                    nip: BubbleNip.leftTop,
-                    child: const Text('Hi, developer!'),
-                  ),
-                ],
-              ),
-            ],
+            children: talkList,
           )),
     );
   }
